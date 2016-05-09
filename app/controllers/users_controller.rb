@@ -14,7 +14,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(allowed_params)
     if @user.save
-      redirect_to @user, notice: "Successfully created user."
+      if params[:user][:avatar].present?
+        render :crop
+      else
+        redirect_to @user, notice: "Successfully created user."
+      end
     else
       render :new
     end
@@ -27,7 +31,11 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(allowed_params)
-      redirect_to @user, notice: "Successfully updated user."
+      if params[:user][:avatar].present?
+        render :crop
+      else
+        redirect_to @user, notice: "Successfully updated user."
+      end
     else
       render :new
     end
