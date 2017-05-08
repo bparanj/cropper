@@ -16,7 +16,7 @@
  */
 
 body {
-  background-color: #444444;
+  background-color: #d3d3d3;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
@@ -96,3 +96,8 @@ form .field, form .actions {
 h4 {
   margin-bottom: 5px;
 }
+
+.paper {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
